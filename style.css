@@ -111,7 +111,7 @@ body {
 }
 
 .active .card__info {
-  max-height: 8vh;
+  max-height: 5.8em;
   overflow: visible;
   opacity: 1;
 }
@@ -185,8 +185,8 @@ body {
   .card__image:after {
     content:"";
     position: absolute;
-    top: -315px;
-    left: -645px;
+    top: -19.6875em;
+    left: -40.3125em;
     background: url('./images/bg-pattern-desktop.svg') no-repeat center;
     background-size: 100% 120%;
     width: 200%;
@@ -196,8 +196,8 @@ body {
   .card__image::before {
     content:"";
     position: absolute;
-    top: -20px;
-    left: -78px;
+    top: -1.25em;
+    left: -4.875em;
     background: url('./images/illustration-woman-online-desktop.svg') no-repeat center;
     background-size: 100%;
     width: 95%;
