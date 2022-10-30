@@ -1,0 +1,222 @@
+@import url('./reset.css');
+
+@import url(https://fonts.googleapis.com/css?family=Kumbh+Sans:100,200,300,regular,500,600,700,800,900);
+
+:root {
+  --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --Soft-red: hsl(14, 88%, 65%);
+  --Soft-violet: hsl(273, 75%, 66%);
+  --Soft-blue: hsl(240, 73%, 65%);
+  --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --Dark-grayish-blue: hsl(240, 6%, 50%);
+  --Light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+body {
+  background: linear-gradient(var(--Soft-violet) 5%, var(--Soft-blue));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9em 0 4em 0;
+  font-family: 'Kumbh Sans';
+  position: relative;
+}
+
+.main {
+  display: flex;
+  position: relative;
+}
+
+.card {
+  display: flex;
+}
+
+.card__wrapper {
+  background: hsl(0, 0%, 100%);
+  display: flex;
+  flex-flow: column nowrap;
+  width: 22.1875em;
+  border-radius: 1.875em;
+}
+
+.card__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8.125em;
+  position: relative;
+}
+
+.card__img {
+  display: none;
+}
+
+.card__image:after {
+  content:"";
+  position: absolute;
+  top: -2.8125em;
+  background: url('./images/bg-pattern-mobile.svg') no-repeat center;
+  background-size: 82% 55%;
+  width: 18.75em;
+  height: 12.5em;
+}
+
+.card__image::before {
+  content:"";
+  position: absolute;
+  top: -7.5em;
+  background: url('./images/illustration-woman-online-mobile.svg') no-repeat center;
+  width: 15.625em;
+  height: 12.5em;
+}
+
+
+.card__accordion {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 1.5em 3.2em 1.5em;
+}
+
+.card__title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--Very-dark-desaturated-blue);
+}
+.card__questions {
+  gap: 1.2em;
+  padding: 2em 0 0 0;
+}
+
+.card__questions, .card__question {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.card__question {
+  border-bottom: 1px solid hsla(240, 6%, 50%, 0.226);
+}
+
+.pad {
+  padding-bottom: 1em;
+}
+
+.active .card__text h2{
+  font-weight: 700;
+}
+
+.active .card__question {
+  padding-bottom: 1em;
+}
+
+.active .card__info {
+  max-height: 8vh;
+  overflow: visible;
+  opacity: 1;
+}
+
+.active .card__svg {
+  transform: rotateX(180deg);
+}
+
+.card__text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.card__text h2 {
+  font-size: .9rem;
+  font-weight: 400;
+  color: var(--Very-dark-grayish-blue);
+  transition: color 200ms ease-in-out;
+}
+
+.card__text:hover h2 {
+  color: var(--Soft-red);
+}
+
+.card__svg {
+  width: 1em;
+  transform: rotateX(0);
+  transition: all 300ms ease;
+}
+
+.card__info {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  width: 93%;
+  font-size: .8rem;
+  text-align: left;
+  color: var(--Dark-grayish-blue);
+  padding-top: 1em;
+  transition: all 300ms ease;
+}
+
+@media screen and (min-width: 1024px) {
+  .card__wrapper {
+    width: 75em;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .card__image {
+    width: 45%;
+    height: 80%;
+  }
+
+  .main::before {
+    position: absolute;
+    content: "";
+    background: url('./images/illustration-box-desktop.svg') no-repeat;
+    top: 41%;
+    left: 10%;
+    transform: translateX(-110%);
+    width: 200px;
+    height: 200px;
+    z-index: 2;
+  }
+
+  .card__image:after {
+    content:"";
+    position: absolute;
+    top: -315px;
+    left: -645px;
+    background: url('./images/bg-pattern-desktop.svg') no-repeat center;
+    background-size: 100% 120%;
+    width: 200%;
+    height: 200%;
+  }
+  
+  .card__image::before {
+    content:"";
+    position: absolute;
+    top: -20px;
+    left: -78px;
+    background: url('./images/illustration-woman-online-desktop.svg') no-repeat center;
+    background-size: 100%;
+    width: 95%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .card__accordion {
+    width: 55%;
+    padding: 5em 7.5em 5em 0;
+  }
+
+  .card__title {
+    width: 100%;
+    text-align: left;
+    margin-bottom: .6em;
+  }
+
+  .card__questions {
+    gap: 2em;
+  }
+}
